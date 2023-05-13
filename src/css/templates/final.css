@@ -1,5 +1,84 @@
 @import url("../index.css");
 
 body {
-  font-family: Seaside;
+  font-family: Bagnard;
+  color: #595959;
+}
+
+header img {
+  width: 100px;
+  margin-inline: auto;
+  padding-block: 20px;
+}
+
+.content>*+* {
+  margin-top: 20px;
+}
+
+.content {
+  padding: 20px;
+}
+
+.genre,
+.meta,
+.description {
+  padding-inline-start: 12px;
+  font-weight: 200;
+}
+
+.content button {
+  background: rgb(212, 180, 45, .3);
+  color: #8C8C8C;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-family: Manrope;
+  font-weight: bold;
+  border: none;
+}
+
+.meta span {
+  color: #1A1A1A;
+}
+
+.content img[alt="logo image"] {
+  display: none;
+}
+
+@media (width >=1024px) {
+  main {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+
+  section {
+    max-width: 1250px;
+    margin-inline: auto;
+    display: flex;
+    gap: 40px;
+  }
+
+  .left {
+    flex: 1 0 60%;
+  }
+
+  .left img {
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .right {
+    flex-grow: 1222;
+  }
+
+  header img[alt="logo image"] {
+    display: none;
+  }
+
+  .content img[alt="logo image"] {
+    width: 150px;
+    margin-inline: auto;
+    display: block;
+  }
 }
