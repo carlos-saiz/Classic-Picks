@@ -1,0 +1,9 @@
+@import '../atoms/colors.css';
+body {
+  background-color: var(--secondary);
+  /* background-color: green; */
+}
+
+h1 {
+  padding: var(--padding-big);
+}

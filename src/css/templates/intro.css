@@ -1,0 +1,16 @@
+@import '../molecules/search-input.css';
+body#intro {
+  /* background-color: var(--accent); */
+  background-color: var(--dark);
+  background-image: url('https://images.freeimages.com/images/large-previews/816/tower-bridge-london-1203174.jpg');
+  background-size: cover;
+}
+
+h1 {
+  padding: var(--padding-big);
+  color: white;
+}
+
+ul a{
+  color:var(--secondary);
+}
