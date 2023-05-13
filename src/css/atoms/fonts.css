@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope/Manrope/Manrope-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Seaside";
+  src: url("/fonts/Seaside_Resort_NF/Seaside Resort NF/@font-face/880230403f751fb9c51f7dcf750f2471.ttf");
+}
+
+@font-face {
+  font-family: "Bagnard";
+  src: url("/fonts/Bagnard.otf");
+}
