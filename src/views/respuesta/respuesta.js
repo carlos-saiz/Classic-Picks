@@ -1,1 +1,1 @@
-import '../../css/templates/final.css'
+import '../../css/templates/respuesta.css'
