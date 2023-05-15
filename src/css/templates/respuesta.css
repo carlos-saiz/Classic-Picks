@@ -1,0 +1,10 @@
+@import '../../css/templates/respuesta.css';
+
+body{
+    background-color: white;
+}
+.respuestaFinal{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
