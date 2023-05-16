@@ -1,4 +1,20 @@
 @import '../molecules/search-input.css';
+@font-face {
+  font: Bagnard;
+  font-family: 'Bagnard';
+  src: url('/public/fonts/Bagnard.otf') format('otf');
+}
+@font-face {
+  font: Seaside Resort NF;
+  font-family: 'Seaside Resort NF';
+  src: url('/public/fonts/Seaside_Resort_NF/Seaside Resort NF/Seaside Resort NF.otf') format('otf');
+}
+@font-face {
+  font: Manrope;
+  font-family: 'Manrope';
+  src: url('/public/fonts/Manrope/Manrope/static/Manrope-Medium.ttf') format('ttf');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +22,7 @@
   text-decoration: none;
 }
 body {
-  width: 100vw;
-  height: 100vh;
-  margin: 50px;
+  
   padding: 50px;
   background-color: #FFFFFF;
 }
@@ -47,4 +61,25 @@ p{
   color: #1a1a1a;
   border: none;
   cursor: pointer;
+}
+
+.saltar-intro{
+  font-family: 'Manrope';
+  color: #D9D9D9;
+}
+
+@media (width >=1024px) {
+  main {
+    height: 100vh;
+    place-items: center;
+  }
+  
+  .bloque {
+    max-width: 1250px;
+    padding: 20px;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-inline: auto;
+    display: flex;
+  }
 }
