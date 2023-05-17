@@ -1,8 +1,72 @@
-body{
-    background-color: white;
+@import '../molecules/search-input.css';
+
+@font-face {
+  font-family: 'Bagnard';
+  src: url('/public/fonts/Bagnard.otf') format('otf');
 }
-.respuestaFinal{
+
+@font-face {
+  font-family: 'Seaside Resort NF';
+  src: url('/public/fonts/Seaside_Resort_NF/Seaside Resort NF/Seaside Resort NF.otf') format('otf');
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/public/fonts/Manrope/Manrope/static/Manrope-Medium.ttf') format('ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  padding: 50px;
+  background-color: #FFFFFF;
+}
+
+.respuestaFinal {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.respuestaFinal img {
+  height: 150px;
+  margin-bottom: 50px;
+}
+
+.respuestaFinal h3 {
+  text-align: center;
+  font-family: 'Bagnard', sans-serif;
+  font-style: normal;
+  font-size: medium;
+  margin-bottom: 20px;
+}
+
+.respuestaFinal .respuesta {
+  text-align: center;
+}   
+@media (min-width: 1024px) {
+  .respuestaFinal {
+    height: 100vh;
+    place-items: center;
+  }
+
+  .respuestaFinal {
+    max-width: 1250px;
+    padding: 20px;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-inline: auto;
+    display: flex;
+  }
+  .playButton{
     display: flex;
     justify-content: center;
-    align-items: center;    
-}
+    padding-top: 10px;
+    align-items: center;
+  }}
