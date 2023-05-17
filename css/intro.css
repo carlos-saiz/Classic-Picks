@@ -67,6 +67,7 @@ p{
 .saltar-intro{
   font-family: 'Manrope';
   color: #D9D9D9;
+  cursor: url(/img/cursor/hover.png), url(/img/cursor/hover.cur), pointer;
 }
 
 @media (width >=1024px) {
