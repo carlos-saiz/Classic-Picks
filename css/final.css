@@ -11,7 +11,7 @@ header img {
   padding-block: 20px;
 }
 
-.content>*+* {
+.content > * + * {
   margin-top: 20px;
 }
 
