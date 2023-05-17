@@ -19,6 +19,19 @@
           <a href="./random.html" class="saltar-intro">Saltar intro</a>
         </div>
       </div>
+      <audio id="myAudio">
+        <source src="/sounds/Dr Macak - Cinema Projector.wav" type="audio/wav">
+      </audio>
+      
+      <button onclick="playSound()">Reproducir sonido</button>
+      
+      <script>
+        function playSound() {
+          var audio = document.getElementById("myAudio");
+          audio.play();
+        }
+      </script>
+      
     </main>
     </div>
   </body>
