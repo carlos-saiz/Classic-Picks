@@ -1,0 +1,120 @@
+body {
+  font-family: Bagnard;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.logo-container {
+  width: 100%;
+}
+
+.logo-container img {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.random {
+  padding-inline: 30px;
+  margin-top: auto;
+}
+
+.list-container {
+  max-width: 1000px;
+  margin-inline: auto ;
+}
+
+#list, #add-movie {
+  padding: 20px;
+}
+
+#list > * + * {
+  margin-top: 20px;
+}
+
+.card {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 2px solid #595959;
+  display: flex;
+  align-items: center;
+}
+
+.card span {
+  margin-left: auto;
+}
+
+.random #vamos {
+  display: none;
+}
+.controls button, .random #vamos {
+  background: #D4B42D;
+  color: #1A1A1A;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-family: Manrope;
+  font-weight: bold;
+  border: 2px solid transparent;
+}
+
+
+.controls button:hover, .random #vamos:hover {
+  border: 2px solid #1A1A1A;
+  color: #D4B42D;
+  background: white;
+  cursor: pointer;
+}
+
+.random #vamos {
+  width: 100%;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 20px;
+}
+
+.random-circle {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background-color: #D4B42D;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+
+@media (width >=1024px) {
+
+  main {
+    flex: 1;
+    margin-top: auto;
+  }
+
+  section {
+    max-width: 1250px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+  }
+
+  .random, .list-container {
+    flex: 1;
+    max-width: 500px;
+  }
+
+  #vamos {
+    display: none;
+  }
+  .random #vamos {
+    display: block;
+  }
+
+  .controls button {
+    margin-left: auto;
+  }
+
+}
