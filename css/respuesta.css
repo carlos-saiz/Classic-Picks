@@ -21,7 +21,10 @@
   box-sizing: border-box;
   text-decoration: none;
 }
-
+h1 , h3 {
+  font-family: 'Manrope';
+  font-size: xx-large;
+}
 body {
   padding: 50px;
   background-color: #FFFFFF;
