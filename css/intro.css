@@ -25,6 +25,7 @@ body {
   
   padding: 50px;
   background-color: #FFFFFF;
+  cursor: url(/img/cursor/normal.png), url(/img/cursor/normal.cur), pointer;
 }
 .bloque{
   width: 80vw;
@@ -60,7 +61,7 @@ p{
 .btn-intro:hover {
   color: #1a1a1a;
   border: none;
-  cursor: pointer;
+  cursor: url(/img/cursor/hover.png), url(/img/cursor/hover.cur), pointer;
 }
 
 .saltar-intro{
