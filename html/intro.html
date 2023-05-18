@@ -32,23 +32,31 @@
       
       <button onclick="playSound()">Reproducir sonido</button>
       
+      <!-- <script>
+      </script> -->
+      <!-- scroll Effect to show the background from navbar -->
       <script>
+        // const headerBackground = document.querySelector('.header-background');
+      //   window.onload = function() {
+      //   document.getElementById("myAudio").play();
+      // }
         function playSound() {
-          var audio = document.getElementById("myAudio");
+          var audio = document.getElementById("myAudio")
+          console.log('load audio two')
           audio.play();
         }
-      </script>
-      <!-- scroll Effect to show the background from navbar -->
-      <script defer>
-        const headerBackground = document.querySelector('.header-background');
+        window.addEventListener('load', () => {
+          playSound()
+        })
+        
 
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 100) {
-            headerBackground.classList.add('header-background');
-          } else {
-            headerBackground.classList.remove('header-background');
-          }
-        });
+        // window.addEventListener('scroll', () => {
+        //   if (window.scrollY > 100) {
+        //     headerBackground.classList.add('header-background');
+        //   } else {
+        //     headerBackground.classList.remove('header-background');
+        //   }
+        // });
       </script>
     </main>
     </div>
