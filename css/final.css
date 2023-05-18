@@ -62,10 +62,11 @@ header img {
   .left {
     flex: 1 0 60%;
   }
+  .left iframe{
+    width: 800px;
+    height: 480px;
+    margin-inline: auto;
 
-  .left img {
-    height: 100%;
-    object-fit: contain;
   }
 
   .right {
