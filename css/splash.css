@@ -1,0 +1,23 @@
+  body {
+      background-color: #000000;
+      display: grid;
+      place-items: center;
+    }
+  img{
+      width: 230px;
+      height: 120px;
+   
+  }
+
+  @media (width >=1024px) {
+      body {
+        height: 100vh;
+        place-items: center;
+      }
+      
+      img {
+        max-width: 1250px;
+        width: 800px;
+        height: 400px;
+      }
+    }
