@@ -1,26 +1,5 @@
 @import '../molecules/search-input.css';
-@font-face {
-  font: Bagnard;
-  font-family: 'Bagnard';
-  src: url('/public/fonts/Bagnard.otf') format('otf');
-}
-@font-face {
-  font: Seaside Resort NF;
-  font-family: 'Seaside Resort NF';
-  src: url('/public/fonts/Seaside_Resort_NF/Seaside Resort NF/Seaside Resort NF.otf') format('otf');
-}
-@font-face {
-  font: Manrope;
-  font-family: 'Manrope';
-  src: url('/public/fonts/Manrope/Manrope/static/Manrope-Medium.ttf') format('ttf');
-}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-}
 body {
   
   padding: 50px;
