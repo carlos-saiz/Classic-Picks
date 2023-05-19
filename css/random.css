@@ -86,7 +86,7 @@ body {
   padding-inline: 20px;
 }
 
-.random-circle {
+.random-bg {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -96,16 +96,8 @@ body {
   background-color: #1A1A1A;
   margin: 0 auto;
   margin-bottom: 30px;
-  border: 0.5rem solid transparent;
-  border-image:
-  conic-gradient(
-    from var(--angle),
-    #d53e33 0deg 90deg,
-    #fbb300 90deg 180deg,
-    #377af5 180deg 270deg,
-    #399953 270deg 360deg
-  ) 1
-;
+  /* border: 0.5rem solid transparent; */
+  border-image: url(/img/rollo-top.svg) 30;
 }
 
 
@@ -160,13 +152,69 @@ body {
 }
 
 #randomEngine :not(:first-child) {
-  /* display: none; */
+  /* opacity: 0; */
 }
+
+#animation-title {
+  animation: fade-titles 3s infinite;
+}
+
+.movie-name {
+  opacity: 0;
+}
+ .word {
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .visible {
+      color: red;
+      opacity: 1;
+    color: white;
+      transition: opacity .3s;
+    }
+
+/* @keyframes fade-titles { */
+/*   10%{ */
+/*   opacity: 1; */
+/*   } */
+/*   20%{ */
+/*     opacity: 0; */
+
+/*   } */
+/*   30% { */
+/*     opacity: 1; */
+
+/*   } */
+/*   40% { */
+/*     opacity: 0; */
+
+/*   } */
+/*   50% { */
+/*     opacity: 1; */
+
+/*   } */
+/*   60% { */
+/*     opacity: 0; */
+
+/*   } */
+/*   70% { */
+/*     opacity: 1; */
+
+/*   } */
+/*   80% { */
+/*     opacity: 0; */
+
+/*   } */
+/*   90% { */
+/*     opacity: 1; */
+
+/*   } */
+/* } */
 
 
 #randomEngine p {
   color: #FFFFFF;
   position: absolute;
-  opacity: 1;
-  transform: scale(0);
+  /* opacity: 1; */
+  transform: scale(1.4);
 }
