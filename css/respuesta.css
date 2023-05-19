@@ -51,3 +51,18 @@ body {
     padding-top: 10px;
     align-items: center;
   }}
+  playButton {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    align-items: center;
+  }
+  
+  .playButton img {
+    transition: filter 0.3s ease-in-out;
+  }
+  
+  .playButton img:hover {
+    filter:saturate(180%)
+  }
+  
