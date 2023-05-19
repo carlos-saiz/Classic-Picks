@@ -15,6 +15,7 @@
 */
 html, body {
   height: 100%;
+  cursor: url(/img/cursor/normal.png), url(/img/cursor/normal.cur), pointer;
 }
 /*
   Typographic tweaks!
