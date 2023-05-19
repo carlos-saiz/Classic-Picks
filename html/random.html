@@ -8,16 +8,21 @@
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/fonts.css">
   <link href="../css/random.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
 </head>
 <body>
+  <div id="backdrop"></div>
   <main>
     <div class="logo-container">
       <img src="../img/logo-small.svg" alt="logo on top">
     </div>
-    <section>
+    <section> 
       <div class="random">
-        <div class="random-circle"></div>
-        <button id="vamos">Vamos</button>
+        <div class="random-circle">
+          <div id="randomEngine"></div>
+        </div>
+        <button id="vamos-desktop">Vamos</button>
       </div>
       <div class="list-container">
       <div id="list">
@@ -28,10 +33,13 @@
       <div id="add-movie">+ Añadir película</div>
       <div class="controls">
         <button id="reiniciar">Reiniciar</button>
-        <button id="vamos">Vamos</button>
+        <button id="vamos-mobile">Vamos</button>
       </div>
       </div>
     </section>
   </main>
+  <!-- <script type="module" src="../scripts/respuesta.js"> -->
+  <script type="module" src="../scripts/random.js">
+  </script>
 </body>
 </html>

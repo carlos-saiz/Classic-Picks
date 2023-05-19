@@ -4,6 +4,14 @@ body {
   flex-direction: column;
 }
 
+#backdrop {
+  background: #1A1A1A;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -2;
+  opacity: 0;
+}
 
 .logo-container {
   width: 100%;
@@ -17,6 +25,8 @@ body {
 .random {
   padding-inline: 30px;
   margin-top: auto;
+  position: relative;
+  z-index: 33;
 }
 
 .list-container {
@@ -77,12 +87,25 @@ body {
 }
 
 .random-circle {
-  width: 320px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   height: 320px;
-  border-radius: 50%;
-  background-color: #D4B42D;
+  /* border-radius: 50%; */
+  background-color: #1A1A1A;
   margin: 0 auto;
   margin-bottom: 30px;
+  border: 0.5rem solid transparent;
+  border-image:
+  conic-gradient(
+    from var(--angle),
+    #d53e33 0deg 90deg,
+    #fbb300 90deg 180deg,
+    #377af5 180deg 270deg,
+    #399953 270deg 360deg
+  ) 1
+;
 }
 
 
@@ -103,7 +126,7 @@ body {
 
   .random, .list-container {
     flex: 1;
-    max-width: 500px;
+    /* max-width: 500px; */
   }
 
   #vamos {
@@ -117,4 +140,28 @@ body {
     margin-left: auto;
   }
 
+}
+
+
+/* Animations */
+
+
+#randomEngine {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+#randomEngine :not(:first-child) {
+  /* display: none; */
+}
+
+
+#randomEngine p {
+  color: #FFFFFF;
+  position: absolute;
+  opacity: 1;
+  transform: scale(0);
 }

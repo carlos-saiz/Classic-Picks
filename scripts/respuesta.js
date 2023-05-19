@@ -1,6 +1,5 @@
-function seleccionarPeliculaAlAzar() {
     // Array de películas
-    const peliculas = [
+   export const peliculas = [
       {
         nombre: 'Los ojos sin rostro',
         genero: 'Drama',
@@ -30,6 +29,7 @@ function seleccionarPeliculaAlAzar() {
         reparto: ['Charles Chaplin', 'Paulette Goddard', 'Jack Oakie']
       }
     ];
+export function seleccionarPeliculaAlAzar() {
   
     // Obtener todos los nombres de las películas
     const nombresPeliculas = peliculas.map(pelicula => pelicula.nombre);
@@ -44,5 +44,6 @@ function seleccionarPeliculaAlAzar() {
   const respuestaPelicula = document.getElementById('respuestaPelicula');
   
   // Ejecutar la función y mostrar el resultado en el elemento
-  respuestaPelicula.textContent = seleccionarPeliculaAlAzar();
+  // respuestaPelicula.textContent = seleccionarPeliculaAlAzar();
+
   
