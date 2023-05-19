@@ -4,6 +4,14 @@ body {
   flex-direction: column;
 }
 
+#backdrop {
+  background: #1A1A1A;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -2;
+  opacity: 0;
+}
 
 .logo-container {
   width: 100%;
@@ -17,6 +25,8 @@ body {
 .random {
   padding-inline: 30px;
   margin-top: auto;
+  position: relative;
+  z-index: 33;
 }
 
 .list-container {
@@ -76,13 +86,18 @@ body {
   padding-inline: 20px;
 }
 
-.random-circle {
-  width: 320px;
+.random-bg {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   height: 320px;
-  border-radius: 50%;
-  background-color: #D4B42D;
+  /* border-radius: 50%; */
+  background-color: #1A1A1A;
   margin: 0 auto;
   margin-bottom: 30px;
+  /* border: 0.5rem solid transparent; */
+  border-image: url(/img/rollo-top.svg) 30;
 }
 
 
@@ -108,7 +123,7 @@ body {
 
   .random, .list-container {
     flex: 1;
-    max-width: 500px;
+    /* max-width: 500px; */
   }
 
   #vamos {
@@ -122,4 +137,84 @@ body {
     margin-left: auto;
   }
 
+}
+
+
+/* Animations */
+
+
+#randomEngine {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+#randomEngine :not(:first-child) {
+  /* opacity: 0; */
+}
+
+#animation-title {
+  animation: fade-titles 3s infinite;
+}
+
+.movie-name {
+  opacity: 0;
+}
+ .word {
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .visible {
+      color: red;
+      opacity: 1;
+    color: white;
+      transition: opacity .3s;
+    }
+
+/* @keyframes fade-titles { */
+/*   10%{ */
+/*   opacity: 1; */
+/*   } */
+/*   20%{ */
+/*     opacity: 0; */
+
+/*   } */
+/*   30% { */
+/*     opacity: 1; */
+
+/*   } */
+/*   40% { */
+/*     opacity: 0; */
+
+/*   } */
+/*   50% { */
+/*     opacity: 1; */
+
+/*   } */
+/*   60% { */
+/*     opacity: 0; */
+
+/*   } */
+/*   70% { */
+/*     opacity: 1; */
+
+/*   } */
+/*   80% { */
+/*     opacity: 0; */
+
+/*   } */
+/*   90% { */
+/*     opacity: 1; */
+
+/*   } */
+/* } */
+
+
+#randomEngine p {
+  color: #FFFFFF;
+  position: absolute;
+  /* opacity: 1; */
+  transform: scale(1.4);
 }
