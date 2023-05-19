@@ -8,12 +8,15 @@ body {
   background-size: cover;
   cursor: url(/img/cursor/normal.png), url(/img/cursor/normal.cur), pointer;
   display: grid;
+  place-items: center;
   font-family: 'Manrope';
   color: #111;
 }
 
 .bloque{
   width: 80vw;
+  max-width: 500px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,14 +42,15 @@ a {
 
 }
 
-.cta {
+.saltar-intro {
   position: relative;
   margin: auto;
-  padding: 5px 15px;
+  padding: 11px 15px;
   transition: all 0.2s ease;
+  cursor: url(/img/cursor/hover.png), url(/img/cursor/hover.cur), pointer;
   
 }
-.cta:before {
+.saltar-intro:before {
   content: "";
   position: absolute;
   top: 0;
@@ -58,21 +62,22 @@ a {
   width: 40px;
   height: 40px;
   transition: all 0.3s ease;
+  z-index: -3;
 }
-.cta span {
+.saltar-intro span {
   position: block;
   font-size: 12px;
   line-height: 18px;
   letter-spacing: 0.25em;
   vertical-align: middle;
 }
-.cta:hover:before {
+.saltar-intro:hover:before {
   width: 100%;
   background: #D4B42D;
   opacity: 100%;
   
 }
-.cta:active {
+.saltar-intro:active {
   transform: scale(0.96);
 }
 
@@ -114,6 +119,7 @@ a {
   .bloque {
     max-width: 1250px;
     padding: 20px;
+    width: 500px;
     margin-left: 500px;
     margin-right: 500px;
     margin-inline: auto;
