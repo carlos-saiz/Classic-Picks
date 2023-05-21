@@ -173,12 +173,6 @@ export const movies = {
       "name": "Taxi Driver",
       "trailerLink": "https://www.youtube.com/watch?v=sLpMx8_TYOo",
       "picture": "https://example.com/taxi_driver.jpg"
-    },
-    {
-      "id": 30,
-      "name": "The Shawshank Redemption",
-      "trailerLink": "https://www.youtube.com/watch?v=6hB3S9bIaco",
-      "picture": "https://example.com/the_shawshank_redemption.jpg"
     }
   ]
 }

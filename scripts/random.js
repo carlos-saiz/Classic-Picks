@@ -1,34 +1,45 @@
-import { peliculas } from "./respuesta.js"
+// import { peliculas } from "./respuesta.js"
 import { movies } from "./movies.js"
 
 const randomContainer = document.getElementById('randomEngine')
-// const list = document.getElementById('list')
-console.log('random', movies, randomContainer)
-console.log(movies)
 
-let result = []
-const shuffleMovies = movies['movies'].map( (movie, i) => {
-      // console.log(parseInt(Math.random() * movies['movies'].length), movies['movies'][i])
-  console.log(result, result.at(-1), result.includes(result.at(-1)))
-  let randItem = parseInt(Math.random() * movies['movies'].length)
-  if(!result.includes(randItem)) {
-    result.push(randItem)
+
+function shuffleArray(array) {
+  let currentIndex = array.length;
+  let temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle
+  while (currentIndex !== 0) {
+    // Pick a remaining element
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    console.log(currentIndex, 'ci', randomIndex);
+    currentIndex -= 1;
+
+    // Swap it with the current element
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
   }
-  return result
 
-})
+  return array;
+}
 
+// console.log(result, 'res')
 
-console.log(shuffleMovies.splice(0, 5),  'sm')
+const sa = shuffleArray(movies.movies)
+const toplay = sa.slice(0,5)
+console.log(sa,  'sm', toplay)
 
-movies["movies"].map( (item, i) => {
+toplay.map( (item, i) => {
   const movie = document.createElement('p')
   const articleCard = document.createElement('article')
   movie.textContent = item.name
-  // articleCard.classList.add('card')
-  // articleCard.textContent = item.name
-  // list.appendChild(articleCard)
+  articleCard.classList.add('card')
+  articleCard.textContent = item.name
+  articleCard.id = item.id
+  list.appendChild(articleCard)
   movie.classList.add('movie-name')
+  movie.id = `movie-${item.id}`
   // movie.style.opacity = 0
   randomContainer.appendChild(movie)
   setTimeout(() => {
@@ -39,19 +50,43 @@ movies["movies"].map( (item, i) => {
 
 
  const words = document.querySelectorAll('.movie-name');
+ const cards = document.querySelectorAll('.card');
 console.log(words, 'words')
     let currentWord = 0;
-
+    let animationPlayState = 'play'
     function animateWords() {
       words[currentWord].classList.add('visible');
-      setTimeout(() => {
+        cards[currentWord].style.borderColor = 'gold'
+      const listItem = document.getElementById('item')
+      const timing = setTimeout(() => {
         words[currentWord].classList.remove('visible');
+        cards[currentWord].style.borderColor = 'black'
         currentWord = (currentWord + 1) % words.length;
-        animateWords();
+        // console.log(currentWord)
+        if(animationPlayState === 'play'){
+          animateWords();
+        }
       }, 200);
+      setTimeout(() => {
+        clearTimeout(timing)
+        animationPlayState = 'paused'
+        console.log('is time?', words[currentWord])
+        words[currentWord].setAttribute('data-veredict', 'winner')
+        words[currentWord].classList.add('visible');
+        cards[currentWord].style.borderColor = 'gold'
+        cards[currentWord].style.backgroundColor = 'black'
+        cards[currentWord].style.color = 'white'
+      }, Math.floor(Math.random() * (20000 - 3000 + 1) + 3000))
+      // }, 2000)
+
     }
 
     animateWords();
+      const getListItem = document.querySelector('[data-veredict]')
+      console.log(getListItem, 'glijj');
+
+
+
 // const  elementsToAnimate = gsap.utils.toArray('.movie-name')
 // const tl = gsap.timeline({ repeat: -1, repeatDelay: .3, paused: true }, "-=0.7")
 // const backdrop = document.getElementById('backdrop')
