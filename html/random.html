@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/fonts.css">
   <link href="../css/random.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
 </head>
 <body>
   <div id="backdrop"></div>
@@ -37,6 +35,30 @@
       </div>
       </div>
     </section>
+    <dialog id="respuesta-dialog">
+
+    <section class="respuestaFinal">
+
+      <div>
+        <img src="../img/logo-small.svg" alt="logo classic pick">
+      </div>
+      
+        <h3 id="respuesta-ganadora">y la ganadora es...</h3>
+        <div class="respuesta">
+          <p id="respuestaPelicula"></p>
+      
+        </div>
+        <div class="playButton">
+          <img class="play" src="../img/btn-play.svg" alt="">
+        </div>
+        <button id="close-modal">X</button>
+      
+      
+      
+      
+      </section>
+    </dialog>
+
   </main>
   <!-- <script type="module" src="../scripts/respuesta.js"> -->
   <script type="module" src="../scripts/random.js">
