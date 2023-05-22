@@ -162,59 +162,40 @@ body {
 .movie-name {
   opacity: 0;
 }
- .word {
-      opacity: 0;
-      transition: opacity .3s;
-    }
+
     .visible {
-      color: red;
       opacity: 1;
-    color: white;
+
       transition: opacity .3s;
     }
 
-/* @keyframes fade-titles { */
-/*   10%{ */
-/*   opacity: 1; */
-/*   } */
-/*   20%{ */
-/*     opacity: 0; */
-
-/*   } */
-/*   30% { */
-/*     opacity: 1; */
-
-/*   } */
-/*   40% { */
-/*     opacity: 0; */
-
-/*   } */
-/*   50% { */
-/*     opacity: 1; */
-
-/*   } */
-/*   60% { */
-/*     opacity: 0; */
-
-/*   } */
-/*   70% { */
-/*     opacity: 1; */
-
-/*   } */
-/*   80% { */
-/*     opacity: 0; */
-
-/*   } */
-/*   90% { */
-/*     opacity: 1; */
-
-/*   } */
-/* } */
 
 
 #randomEngine p {
   color: #FFFFFF;
   position: absolute;
   /* opacity: 1; */
-  transform: scale(1.4);
+  transform: scale(1.5);
 }
+
+
+
+/* modal  */
+
+dialog:modal {
+  background-color: #595959;
+  box-shadow: 2px 2px 5px rgba(40, 38, 38, 0.112);
+  width: 100vw;
+  margin: auto;
+}
+
+:modal::backdrop {
+  background: hsla(0, 0%, 38%, 0.9);
+  backdrop-filter: blur(3px);
+}
+
+
+:modal::backdrop {
+  background: hsl(0 0% 10% / 0.5);
+}
+

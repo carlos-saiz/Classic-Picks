@@ -1,82 +1,141 @@
-import { peliculas } from "./respuesta.js"
+// import { peliculas } from "./respuesta.js"
 import { movies } from "./movies.js"
 
 const randomContainer = document.getElementById('randomEngine')
-// const list = document.getElementById('list')
-console.log('random', movies, randomContainer)
-console.log(movies)
 
-let result = []
-const shuffleMovies = movies['movies'].map( (movie, i) => {
-      // console.log(parseInt(Math.random() * movies['movies'].length), movies['movies'][i])
-  console.log(result, result.at(-1), result.includes(result.at(-1)))
-  let randItem = parseInt(Math.random() * movies['movies'].length)
-  if(!result.includes(randItem)) {
-    result.push(randItem)
+
+function shuffleArray(array) {
+  let currentIndex = array.length;
+  let temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle
+  while (currentIndex !== 0) {
+    // Pick a remaining element
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // Swap it with the current element
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
   }
-  return result
 
-})
+  return array;
+}
 
 
-console.log(shuffleMovies.splice(0, 5),  'sm')
+// Function to create a movie card element
+function createMovieCard(item) {
+  const articleCard = document.createElement('article');
+  articleCard.classList.add('card');
+  articleCard.textContent = item.name;
+  articleCard.dataset.movieId = item.id; // Set data attribute
+  return articleCard;
+}
 
-movies["movies"].map( (item, i) => {
-  const movie = document.createElement('p')
-  const articleCard = document.createElement('article')
-  movie.textContent = item.name
-  // articleCard.classList.add('card')
-  // articleCard.textContent = item.name
-  // list.appendChild(articleCard)
-  movie.classList.add('movie-name')
-  // movie.style.opacity = 0
-  randomContainer.appendChild(movie)
-  setTimeout(() => {
-    // movie.removeAttribute('id')
-  }, 10)
-  // movie.setAttribute('id', `animation-title`)
-})
+// Function to create a movie name element
+function createMovieNameElement(item) {
+  const movie = document.createElement('p');
+  movie.textContent = item.name;
+  movie.classList.add('movie-name');
+  movie.dataset.movieId = item.id; // Set data attribute
+  return movie;
+}
+
+// Shuffle the movies array
+const shuffledArray = shuffleArray(movies.movies);
+
+// Select the top 5 movies from the shuffled array
+const topMovies = shuffledArray.slice(0, 5);
+
+// Iterate over the top movies and create movie cards and movie name elements
+topMovies.forEach((item) => {
+  const movieCard = createMovieCard(item);
+  const movieNameElement = createMovieNameElement(item);
+
+  // Append the movie card and movie name element to the desired containers
+  list.appendChild(movieCard);
+  randomContainer.appendChild(movieNameElement);
+
+});
 
 
  const words = document.querySelectorAll('.movie-name');
-console.log(words, 'words')
-    let currentWord = 0;
+ const cards = document.querySelectorAll('.card');
+const ganadoraRespuesta = document.getElementById('respuesta-ganadora')
+const respuestaModal = document.getElementById('respuesta-dialog')
+const closeModal = document.getElementById('close-modal')
+ let currentWord = 0;
+let animationPlayState = 'play';
+let timing;
+let animationStopped = false;
+// console.log(cards, 'cards', shuffleArray(new (cards)))
+function animateWords() {
+  words[currentWord].classList.add('visible');
+  cards[currentWord].style.borderColor = 'gold';
 
-    function animateWords() {
-      words[currentWord].classList.add('visible');
-      setTimeout(() => {
-        words[currentWord].classList.remove('visible');
-        currentWord = (currentWord + 1) % words.length;
-        animateWords();
-      }, 200);
+  timing = setTimeout(() => {
+    words[currentWord].classList.remove('visible');
+    cards[currentWord].style.borderColor = 'black';
+  
+    // console.log(words[currentWord].dataset.movieId, 'data mid', cards);
+    currentWord = (currentWord + 1) % words.length;
+    if (animationPlayState === 'play' && !animationStopped) {
+      animateWords();
     }
+  }, 200);
+}
 
-    animateWords();
-// const  elementsToAnimate = gsap.utils.toArray('.movie-name')
-// const tl = gsap.timeline({ repeat: -1, repeatDelay: .3, paused: true }, "-=0.7")
-// const backdrop = document.getElementById('backdrop')
-// const vamosBtn = document.getElementById('vamos-mobile')
-// const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+function stopAnimation() {
+  animationStopped = true;
+}
 
+function resetAnimation() {
+  currentWord = 0;
+  animationStopped = true;
+  
+  animationPlayState = 'play'
+  // clearTimeout(timing)
+  animateWords();
+}
 
-// elementsToAnimate.forEach( (elem, i) => {
-//   const randItemIndex = gsap.utils.random(elementsToAnimate)
-//   console.log(randItemIndex.textContent)
-//     // tl.fromTo(elem, {scale: 5, autoAlpha :0}, { scale: 0, autoAlpha: 1, delay: 0.5 + (0.5 * i), repeat: -1})
-//     tl.to(randItemIndex, {scale: 5, autoAlpha: 0, y: -12 })
-//     // tl.to(backdrop, {autoAlpha: 1}).to(backdrop, {autoAlpha: 0})
-//   tl.to('article:nth-child(2)', {border: '2px solid #D4B42D'})
-//     // tl.timeScale(0.6 / i * 25  )
-//   })
+function handleAnimationEnd() {
+  clearTimeout(timing);
+  cards[currentWord].setAttribute('data-veredict', 'winner');
+  console.log(words[currentWord].textContent)
+  ganadoraRespuesta.innerText = words[currentWord].textContent
+  words[currentWord].classList.add('visible');
+  cards[currentWord].style.borderColor = 'gold';
+  cards[currentWord].style.backgroundColor = 'black';
+  cards[currentWord].style.color = 'white';
+  setTimeout(() => {
+    respuestaModal.showModal()
+  }, 1600)
+}
 
+words[currentWord].addEventListener('animationend', () => {
+  // handleAnimationEnd();
+  // resetAnimation()
+  // enableButton();
+});
 
-// vamosBtn.addEventListener('click', () => {
-//   console.log(tl.isActive())
-//   if(tl.isActive()) {
-//     console.log('dd')
-//     tl.pause()
-//   }
-//   tl.play()
-//  
-// })
+// Start the animation
+const vamosBtn = document.getElementById('vamos-mobile')
+vamosBtn.addEventListener('click', () => {
+const stopTime = Math.floor(Math.random() * (10000 - 3000 + 1) + 3000);
+  animateWords();
+setTimeout(() => {
+  stopAnimation();
+  console.log('sett')
+  handleAnimationEnd();
+}, stopTime);
+})
+const reset = document.getElementById('reiniciar')
+reset.addEventListener('click', () => {
+  resetAnimation()
+})
 
+closeModal.addEventListener('click', () => {
+  respuestaModal.close()
+  // cards[currentWord].remove()
+})
