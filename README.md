@@ -1,22 +1,41 @@
-# Classic Pick-Page--3
-Películas antiguas al azar
-Este es un proyecto que consiste en una página web que utiliza JavaScript para seleccionar una película antigua al azar de una lista predefinida y que ademas el usuario podra agregar peliculas. El proyecto está alojado en GitHub.
+Classic Picks - Randomizer de Películas Clásicas
+Descripción del Proyecto
+Classic Picks es una página web que ofrece un servicio de randomizer de películas clásicas. La aplicación permite a los usuarios seleccionar una película aleatoria de una lista predefinida de películas clásicas o agregar sus propias películas a la lista. El objetivo principal es brindar a los amantes del cine clásico una forma divertida y fácil de descubrir nuevas películas para ver.
 
-¿Cómo funciona?
-La página web es muy sencilla de usar. Al acceder a ella, se muestra un botón que dice "Generar película al azar". Al hacer clic en este botón, se ejecuta un script de JavaScript que selecciona aleatoriamente una película antigua de la lista y la muestra en la página.
+Mockups
+Aquí se presentan algunos mockups que ilustran el diseño y la interfaz de usuario de Classic Picks:
 
-La lista de películas antiguas que se utiliza en este proyecto se encuentra en un archivo de JavaScript dentro del repositorio de GitHub. Este archivo contiene una lista de objetos con información sobre cada película, como su trailer, título, año de lanzamiento, director y reparto y duracion.
+Mockup 1
+[label](blob:file%3A///81704ba9-1882-4c30-92f1-8ed65eb2027b)
+Descripción: Página principal de Classic Picks con la lista de películas clásicas y opciones de navegación.
 
+Mockup 2
+Descripción: Pantalla de selección de película aleatoria con animaciones y detalles de la película elegida.[label](blob:file%3A///80cc01f5-28b5-41f9-a18d-79bce574676b)
 
-¿Cómo contribuir?
-Si deseas contribuir a este proyecto, puedes hacerlo de varias formas. Puedes agregar nuevas películas a la lista o actualizar la información existente. También puedes mejorar el diseño de la página web o agregar nuevas funcionalidades.
+Tecnologías Utilizadas
+El desarrollo de Classic Picks utilizó las siguientes tecnologías y herramientas:
 
-Para contribuir, puedes hacer un fork del repositorio, realizar tus cambios y enviar una solicitud de extracción. Si tus cambios son aceptados, se fusionarán con el proyecto principal y estarán disponibles para todos los usuarios.
+Figma: para el diseño de la interfaz de usuario y la creación de los mockups.
+https://www.figma.com/file/8Znbaeesr6s1nvCbThLfhE/Equipo-3%3A-Classic-Picks?type=design&node-id=0-1&t=W5lq7GesmjwcPXX9-0
 
-Herramientas: Figma , Visual , Javascript , css , Wireframe en papel,
+Trello: para la gestión de tareas y el seguimiento del progreso del proyecto.:
+https://trello.com/b/NH9jzLiD/proyecto-2-p7-randoom
 
-Licencia
-puedes usar, copiar, modificar y distribuir este proyecto sin restricciones. Para obtener más información,
+HTML5 y CSS3: para la estructura y el estilo de la página web.
 
-Agradecimientos
-Este proyecto fue creado por Carlos , Nuria , Ana maria , Hector.
+JavaScript: para la lógica y la interacción del cliente.
+
+Imágenes y animaciones: se utilizaron recursos visuales y animaciones para mejorar la experiencia del usuario.
+Retos Enfrentados y Características Futuras
+Durante el desarrollo de Classic Picks, se enfrentaron diversos desafíos, como la integración de la funcionalidad de agregar películas personalizadas y la implementación de las animaciones para mejorar la experiencia de usuario. Estos desafíos se superaron mediante el uso de las tecnologías adecuadas y el diseño cuidadoso de la interfaz.
+
+Algunas características que se esperan desarrollar en el futuro incluyen:
+
+Sistema de recomendación personalizada basado en los gustos del usuario.
+Integración con servicios de transmisión para facilitar el acceso a las películas.
+Posibilidad de guardar películas favoritas o crear listas de reproducción.
+Comentarios y reseñas de películas por parte de la comunidad de usuarios.
+Aplicación Desplegada
+Puedes acceder a Classic Picks en la siguiente URL: "insertar link"
+
+¡Espero que disfrutes explorando y descubriendo películas clásicas con Classic Picks! Si tienes alguna pregunta adicional, no dudes en hacerla.
