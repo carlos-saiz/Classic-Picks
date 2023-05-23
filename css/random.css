@@ -109,9 +109,7 @@ body {
     flex-direction: column;
   }
 
-  section > * + * {
-    border: 2px dotted firebrick;
-  }
+ 
   section {
     max-width: 1250px;
     width: 100%;
@@ -184,9 +182,9 @@ body {
 /* modal  */
 
 dialog:modal {
-  background-color: #595959;
   box-shadow: 2px 2px 5px rgba(40, 38, 38, 0.112);
-  width: 100vw;
+  /* width: 100vw; */
+  width: 800px;
   margin: auto;
 }
 
@@ -200,3 +198,24 @@ dialog:modal {
   background: hsl(0 0% 10% / 0.5);
 }
 
+
+.respuestaFinal {
+  max-width: 500px;
+  margin: auto;
+  display:flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.respuestaFinal div {
+  width:150px;
+  margin: auto;
+}
+
+.respuestaFinal h3 {
+  text-align: center;
+}
+
+img.play {
+  margin: auto;
+}
