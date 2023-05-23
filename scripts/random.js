@@ -2,6 +2,10 @@
 import { movies } from "./movies.js"
 
 const randomContainer = document.getElementById('randomEngine')
+const vamosBtn = document.getElementById('vamos-mobile')
+const reset = document.getElementById('reiniciar')
+const respuesta = document.getElementById('respuesta-dialog')
+
 
 
 function shuffleArray(array) {
@@ -59,83 +63,57 @@ topMovies.forEach((item) => {
 
 });
 
+let stopTime = gsap.utils.random(0,5,true)
+let tl = new TimelineMax({
+  repeat: stopTime(),
+  paused: true,
+  duration: .2,
+  onComplete: callTest,
+  onCompleteParams:['{self}', 'param2']
+})
+const names = document.querySelectorAll('.movie-name')
+const cards = gsap.utils.toArray('#list article')
+const elementsToAnimate = gsap.utils.toArray(names)
+console.log(cards, 'cards')
 
- const words = document.querySelectorAll('.movie-name');
- const cards = document.querySelectorAll('.card');
-const ganadoraRespuesta = document.getElementById('respuesta-ganadora')
-const respuestaModal = document.getElementById('respuesta-dialog')
-const closeModal = document.getElementById('close-modal')
- let currentWord = 0;
-let animationPlayState = 'play';
-let timing;
-let animationStopped = false;
-// console.log(cards, 'cards', shuffleArray(new (cards)))
-function animateWords() {
-  words[currentWord].classList.add('visible');
-  cards[currentWord].style.borderColor = 'gold';
-
-  timing = setTimeout(() => {
-    words[currentWord].classList.remove('visible');
-    cards[currentWord].style.borderColor = 'black';
-  
-    // console.log(words[currentWord].dataset.movieId, 'data mid', cards);
-    currentWord = (currentWord + 1) % words.length;
-    if (animationPlayState === 'play' && !animationStopped) {
-      animateWords();
-    }
-  }, 200);
+console.log(gsap.utils.toArray('.movie-name'))
+const elemIndexes = elementsToAnimate.map(x => x.dataset.movieId)
+function callTest(el) {
+  const randomStop = Math.floor(stopTime())
+  console.log(el, 'el cll', randomStop);
+  gsap.to(names[randomStop], {autoAlpha: 1})
+  gsap.to(cards[randomStop], {borderColor: 'gold'})
+  // respuesta.showModal()
+  // gsap.to(cards[randomStop], {x: '-200%', visibility: 'hidden'})
 }
 
-function stopAnimation() {
-  animationStopped = true;
-}
+console.log(elementsToAnimate, 'elem', elemIndexes)
+gsap.utils.shuffle(elementsToAnimate).forEach( (elem, i) => {
+  const randItemIndex = gsap.utils.random(elementsToAnimate)
+  console.log( 'st', elem);
+   tl
+    .add('start')
+    .to(elem, {autoAlpha: 1, data: elem.dataset.movieId}, 'start')
+    .to(elem, {autoAlpha: 0, data: "get"})
+    .to(cards[elemIndexes.indexOf(elem.dataset.movieId)],{ background: 'pink'}, 'start')
+    .to(cards[elemIndexes.indexOf(elem.dataset.movieId)], {background: 'transparent', data: 'tr'})
+    console.log(elem.dataset.movieId)
+      // tl.to(randItemIndex, {scale: 5, autoAlpha: 0, y: -12 })
+      // tl.to(backdrop, {autoAlpha: 1}).to(backdrop, {autoAlpha: 0})
+    // tl.to('article:nth-child(2)', {border: '2px solid #D4B42D'})
+  tl.timeScale(0.6 / i * 125  )
+})
 
-function resetAnimation() {
-  currentWord = 0;
-  animationStopped = true;
-  
-  animationPlayState = 'play'
-  // clearTimeout(timing)
-  animateWords();
-}
-
-function handleAnimationEnd() {
-  clearTimeout(timing);
-  cards[currentWord].setAttribute('data-veredict', 'winner');
-  console.log(words[currentWord].textContent)
-  ganadoraRespuesta.innerText = words[currentWord].textContent
-  words[currentWord].classList.add('visible');
-  cards[currentWord].style.borderColor = 'gold';
-  cards[currentWord].style.backgroundColor = 'black';
-  cards[currentWord].style.color = 'white';
-  setTimeout(() => {
-    respuestaModal.showModal()
-  }, 1600)
-}
-
-words[currentWord].addEventListener('animationend', () => {
-  // handleAnimationEnd();
-  // resetAnimation()
-  // enableButton();
-});
-
-// Start the animation
-const vamosBtn = document.getElementById('vamos-mobile')
+gsap.from('#list article', {y: -10, opacity: 0, stagger: 0.1, delay: 0.1, ease: 'elastic'})
 vamosBtn.addEventListener('click', () => {
-const stopTime = Math.floor(Math.random() * (10000 - 3000 + 1) + 3000);
-  animateWords();
-setTimeout(() => {
-  stopAnimation();
-  console.log('sett')
-  handleAnimationEnd();
-}, stopTime);
+ 
+  console.log(tl.isActive(), stopTime);
+  if(!tl.isActive()) {
+    tl.restart()
+    
+  }
+  tl.play()
 })
-const reset = document.getElementById('reiniciar')
 reset.addEventListener('click', () => {
-  resetAnimation()
-})
-
-closeModal.addEventListener('click', () => {
-  respuestaModal.close()
-  // cards[currentWord].remove()
+  tl.restart()
 })

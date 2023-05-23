@@ -160,7 +160,8 @@ body {
 }
 
 .movie-name {
-  opacity: 0;
+  opacity: 1;
+  visibility: hidden;
 }
 
     .visible {
