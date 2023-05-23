@@ -1,18 +1,3 @@
-@import '../molecules/search-input.css';
-
-h1, h3 {
-  font-family: 'Manrope';
-  font-size: xx-large;
-}
-
-body {
-  padding: 50px;
-  background-color: #FFFFFF;
-  width: 80vw;
-  display: grid;
-  place-items: center;
-}
-
 #logo-cp{
   margin-top: 10px;
 }

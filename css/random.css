@@ -173,7 +173,6 @@ body {
 #randomEngine p {
   color: #FFFFFF;
   position: absolute;
-  /* opacity: 1; */
   transform: scale(1.5);
 }
 
@@ -183,9 +182,8 @@ body {
 
 dialog:modal {
   box-shadow: 2px 2px 5px rgba(40, 38, 38, 0.112);
-  /* width: 100vw; */
-  width: 800px;
   margin: auto;
+  border: none;
 }
 
 :modal::backdrop {
@@ -195,7 +193,7 @@ dialog:modal {
 
 
 :modal::backdrop {
-  background: hsl(0 0% 10% / 0.5);
+  background: transparent;
 }
 
 
